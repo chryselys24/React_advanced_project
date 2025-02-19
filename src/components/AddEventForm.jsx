@@ -17,7 +17,7 @@ const AddEventForm = ({ categories, onAddEvent, events = [] }) => {
   const [endTime, setEndTime] = useState("");
   const [categoryIds, setCategoryIds] = useState([]);
   const [location, setLocation] = useState("");
-  const [createdBy, setCreatedBy] = useState(1); // Default to User 1
+  const [createdBy, setCreatedBy] = useState(1); 
 
   // Handle checkbox changes
   const handleCategoryChange = (e) => {
@@ -34,11 +34,10 @@ const AddEventForm = ({ categories, onAddEvent, events = [] }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Genereer een willekeurige unieke ID
     const randomId = Date.now() + Math.floor(Math.random() * 1000);
 
     const newEvent = {
-      id: randomId, // Willekeurige unieke ID
+      id: randomId, 
       createdBy,
       title,
       description,
@@ -67,7 +66,7 @@ const AddEventForm = ({ categories, onAddEvent, events = [] }) => {
         setEndTime("");
         setCategoryIds([]);
         setLocation("");
-        setCreatedBy(1); // Reset de gebruiker naar User 1 na het toevoegen
+        setCreatedBy(1); 
         alert("Evenement succesvol toegevoegd!");
       } else {
         alert("Fout bij het toevoegen van evenement.");
