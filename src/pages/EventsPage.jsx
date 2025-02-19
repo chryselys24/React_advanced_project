@@ -47,10 +47,10 @@ export const EventsPage = () => {
 
         setEvents(eventsData);
         setCategories(categoriesData);
-        setLoading(false); // Zorg ervoor dat de pagina niet op 'Loading...' blijft hangen
+        setLoading(false); 
       } catch (error) {
         console.error("Fout bij ophalen van data:", error);
-        setLoading(false); // Zorg dat het scherm niet vast blijft hangen bij een fout
+        setLoading(false); 
       }
     };
 
