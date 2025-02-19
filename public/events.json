@@ -1,0 +1,162 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ignacio Doe",
+      "image": "https://global-uploads.webflow.com/5eecfecbe625d195e35b89f2/624bfb093da7d92733c001c0_Ignacio%20Villafruela%20Rodr%C3%ADguez.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jane Bennett",
+      "image": "https://global-uploads.webflow.com/5eecfecbe625d195e35b89f2/624bfb401d7131c760ca1c63_Elieska%20Lensink.jpg"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "createdBy": 1,
+      "title": "Trampoline party",
+      "description": "Bounce around with your friends",
+      "image": "https://i.pinimg.com/736x/3d/2f/af/3d2faf4e3188d34a9fcdc00df59e77b0.jpg",
+      "categoryIds": [
+        2
+      ],
+      "location": "My back yard 13",
+      "startTime": "2023-03-10T18:00",
+      "endTime": "2023-03-10T17:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "createdBy": 1,
+      "title": "Laser Tag mania",
+      "description": "Let's play laser tag!",
+      "image": "https://wincacademy.github.io/webpages/media/lasertag.jpg",
+      "categoryIds": [
+        2
+      ],
+      "location": "Blinded by the Lights Laser Tag, 15 Main St.",
+      "startTime": "2023-04-06T17:46",
+      "endTime": "2023-04-06T18:46"
+    },
+    {
+      "id": 3,
+      "createdBy": 2,
+      "title": "Badminton game",
+      "description": "Hit that shuttle!",
+      "image": "https://wincacademy.github.io/webpages/media/pexels-vladvictoria-2202685.jpg",
+      "categoryIds": [
+        1,
+        2
+      ],
+      "location": "The Park",
+      "startTime": "2023-03-15T12:00:00.000Z",
+      "endTime": "2023-03-15T13:30:00.000Z"
+    },
+    {
+      "id": 4,
+      "createdBy": 2,
+      "title": "Yoga",
+      "description": "It's a bit of a stretch.",
+      "image": "https://wincacademy.github.io/webpages/media/pexels-gabby-k-5384538.jpg",
+      "categoryIds": [
+        3
+      ],
+      "location": "Shavasana Yoga School",
+      "startTime": "2023-03-09T06:00:00.000Z",
+      "endTime": "2023-03-09T07:00:00.000Z"
+    },
+    {
+      "id": 1739893845717,
+      "createdBy": 2,
+      "title": "Drink some water!",
+      "description": "We all need to drink more water",
+      "image": "https://www.frecious.bio/media/blog-2020/nieuw_inga/shutterstock_658012429%202.jpg",
+      "startTime": "2025-02-19T15:50:00.000Z",
+      "endTime": "2025-02-28T15:50:00.000Z",
+      "categoryIds": [
+        3
+      ],
+      "location": "the ocean "
+    },
+    {
+      "id": 1739893902903,
+      "createdBy": 1,
+      "title": "Touch some grass",
+      "description": "How long have you been behind this computer for?",
+      "image": "https://media4.manhattan-institute.org/sites/cj/files/on-the-need-to-touch-grass.jpg",
+      "startTime": "2025-02-18T15:51:00.000Z",
+      "endTime": "2025-02-18T19:51:00.000Z",
+      "categoryIds": [
+        3
+      ],
+      "location": "the outside world"
+    },
+    {
+      "id": 1739894143471,
+      "createdBy": 1,
+      "title": "Trekkers kiek'n",
+      "description": "Doar haj een John Deere trekker! POH!",
+      "image": "https://www.deere.nl/assets/images/6m_r2g075991_large_large_39f4d788983360cc95810875c48b82e186eeb204.jpg",
+      "startTime": "2025-07-10T14:55:00.000Z",
+      "endTime": "2025-02-11T15:55:00.000Z",
+      "categoryIds": [
+        1,
+        3
+      ],
+      "location": "Het Platteland "
+    },
+    {
+      "id": 1739903577652,
+      "createdBy": 2,
+      "title": "Brommers kiek'n",
+      "description": "voor als trekkers niet genoeg waren",
+      "image": "https://catalogs.seacommerce.nl/jdkmotoren/SD_medium/medium_han_rw_1j_mzs_0_1.jpg",
+      "startTime": "2025-02-19T22:32:00.000Z",
+      "endTime": "2025-02-20T05:32:00.000Z",
+      "categoryIds": [
+        3
+      ],
+      "location": "bie d'n keet achter mien maa's huus"
+    },
+    {
+      "id": 1739957037522,
+      "createdBy": 2,
+      "title": "Hobbyhorse wedstrijd (gevorderd)",
+      "description": "Dressuur en Cross, vanaf niveau 6!!! 16+ door veiligheidsoverwegingen ",
+      "image": "https://i0.wp.com/drechtstedenvandaag.nl/wp-content/uploads/2019/03/1903025068.jpg?ssl=1",
+      "startTime": "2025-03-01T09:23:00.000Z",
+      "endTime": "2025-03-02T09:23:00.000Z",
+      "categoryIds": [
+        1
+      ],
+      "location": "Manege de Blije Geit"
+    },
+    {
+      "id": 1739957189727,
+      "createdBy": 1,
+      "title": "Disco Bowlen",
+      "description": "Boogy that ball!",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/1d/0b/ac/fa/overzicht-van-de-12-disco.jpg",
+      "startTime": "2025-02-19T11:00:00.000Z",
+      "endTime": "2025-02-19T15:00:00.000Z",
+      "categoryIds": [
+        2
+      ],
+      "location": "Bowling 66"
+    }
+  ],
+  "categories": [
+    {
+      "name": "sports",
+      "id": 1
+    },
+    {
+      "name": "games",
+      "id": 2
+    },
+    {
+      "name": "relaxation",
+      "id": 3
+    }
+  ]
+}
