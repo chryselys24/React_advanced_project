@@ -194,7 +194,7 @@ export const EventPage = () => {
               <Button colorScheme="green" onClick={onOpen} mt={4}>
                 Bewerken
               </Button>
-              
+
               <Button
                 colorScheme="red"
                 onClick={() => setShowDeleteWarning(true)}
@@ -223,7 +223,6 @@ export const EventPage = () => {
         </Flex>
       </Box>
 
-      {/* Modal for Editing Event */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -292,7 +291,6 @@ export const EventPage = () => {
         </ModalContent>
       </Modal>
 
-      {/* Bevestigingswaarschuwing voor Verwijdering */}
       {showDeleteWarning && (
         <Alert status="warning" variant="left-accent" mb={4}>
           <AlertIcon />
