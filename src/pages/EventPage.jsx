@@ -123,7 +123,7 @@ export const EventPage = () => {
           duration: 3000,
           isClosable: true,
         });
-        navigate("/"); // Redirect naar de evenementenpagina
+        navigate("/");
       } else {
         toast({
           title: "Fout",
@@ -145,7 +145,7 @@ export const EventPage = () => {
         isClosable: true,
       });
     } finally {
-      setShowDeleteWarning(false); // Sluit de waarschuwing na het verwijderen
+      setShowDeleteWarning(false); 
     }
   };
 
@@ -194,8 +194,7 @@ export const EventPage = () => {
               <Button colorScheme="green" onClick={onOpen} mt={4}>
                 Bewerken
               </Button>
-
-              {/* Verwijder Evenement knop */}
+              
               <Button
                 colorScheme="red"
                 onClick={() => setShowDeleteWarning(true)}
