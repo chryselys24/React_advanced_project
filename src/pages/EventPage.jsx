@@ -31,7 +31,6 @@ export const EventPage = () => {
   const navigate = useNavigate();
   const [event, setEvent] = useState(null);
   const [creator, setCreator] = useState(null);
-  const [users, setUsers] = useState([]);
   const [editedEvent, setEditedEvent] = useState(null);
   const [showDeleteWarning, setShowDeleteWarning] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,22 +39,21 @@ export const EventPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/events.json");
-        const data = await response.json();
+        const response = await fetch(`http://localhost:3000/events/${eventId}`);
+        if (!response.ok) throw new Error("Fout bij ophalen van het evenement");
 
-        const selectedEvent = data.events.find(
-          (e) => e.id === parseInt(eventId)
+        const eventData = await response.json();
+        setEvent(eventData);
+        setEditedEvent(eventData);
+
+        const userResponse = await fetch(
+          `http://localhost:3000/users/${eventData.createdBy}`
         );
-        setEvent(selectedEvent);
+        if (!userResponse.ok)
+          throw new Error("Fout bij ophalen van de gebruiker");
 
-        const userList = data.users;
-        setUsers(userList);
-
-        const eventCreator = userList.find(
-          (user) => user.id === selectedEvent.createdBy
-        );
-        setCreator(eventCreator);
-        setEditedEvent(selectedEvent);
+        const userData = await userResponse.json();
+        setCreator(userData);
       } catch (error) {
         console.error("Fout bij ophalen data:", error);
       }
@@ -145,7 +143,7 @@ export const EventPage = () => {
         isClosable: true,
       });
     } finally {
-      setShowDeleteWarning(false); 
+      setShowDeleteWarning(false);
     }
   };
 
@@ -222,74 +220,6 @@ export const EventPage = () => {
           </Box>
         </Flex>
       </Box>
-
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Bewerk Evenement</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <FormControl mb={4}>
-              <FormLabel htmlFor="title">Titel</FormLabel>
-              <Input
-                id="title"
-                name="title"
-                value={editedEvent.title || ""}
-                onChange={handleInputChange}
-              />
-            </FormControl>
-            <FormControl mb={4}>
-              <FormLabel htmlFor="description">Beschrijving</FormLabel>
-              <Textarea
-                id="description"
-                name="description"
-                value={editedEvent.description || ""}
-                onChange={handleInputChange}
-              />
-            </FormControl>
-            <FormControl mb={4}>
-              <FormLabel htmlFor="location">Locatie</FormLabel>
-              <Input
-                id="location"
-                name="location"
-                value={editedEvent.location || ""}
-                onChange={handleInputChange}
-              />
-            </FormControl>
-            <FormControl mb={4}>
-              <FormLabel htmlFor="startTime">Starttijd</FormLabel>
-              <Input
-                id="startTime"
-                name="startTime"
-                type="datetime-local"
-                value={new Date(editedEvent.startTime)
-                  .toISOString()
-                  .slice(0, 16)}
-                onChange={handleInputChange}
-              />
-            </FormControl>
-            <FormControl mb={4}>
-              <FormLabel htmlFor="endTime">Eindtijd</FormLabel>
-              <Input
-                id="endTime"
-                name="endTime"
-                type="datetime-local"
-                value={new Date(editedEvent.endTime).toISOString().slice(0, 16)}
-                onChange={handleInputChange}
-              />
-            </FormControl>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button variant="ghost" onClick={onClose}>
-              Annuleren
-            </Button>
-            <Button colorScheme="blue" onClick={handleSubmit}>
-              Opslaan
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
 
       {showDeleteWarning && (
         <Alert status="warning" variant="left-accent" mb={4}>
