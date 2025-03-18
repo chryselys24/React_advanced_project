@@ -221,18 +221,73 @@ export const EventPage = () => {
         </Flex>
       </Box>
 
-      {showDeleteWarning && (
-        <Alert status="warning" variant="left-accent" mb={4}>
-          <AlertIcon />
-          Ben je zeker dat je dit evenement wilt verwijderen?
-          <Button colorScheme="red" ml={4} onClick={handleDelete}>
-            Ja, Verwijderen
-          </Button>
-          <Button ml={2} onClick={() => setShowDeleteWarning(false)}>
-            Annuleren
-          </Button>
-        </Alert>
-      )}
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Evenement bewerken</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormControl>
+              <FormLabel>Titel</FormLabel>
+              <Input
+                name="title"
+                value={editedEvent?.title}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+            <FormControl mt={4}>
+              <FormLabel>Beschrijving</FormLabel>
+              <Textarea
+                name="description"
+                value={editedEvent?.description}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+            <FormControl mt={4}>
+              <FormLabel>Locatie</FormLabel>
+              <Input
+                name="location"
+                value={editedEvent?.location}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+            <FormControl mt={4}>
+              <FormLabel>Afbeelding URL</FormLabel>
+              <Input
+                name="image"
+                value={editedEvent.image}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Startdatum en tijd</FormLabel>
+              <Input
+                type="datetime-local"
+                name="startTime"
+                value={editedEvent.startTime}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Einddatum en tijd</FormLabel>
+              <Input
+                type="datetime-local"
+                name="endTime"
+                value={editedEvent.endTime}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
+              Opslaan
+            </Button>
+            <Button onClick={onClose}>Annuleren</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };
